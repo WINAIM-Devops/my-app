@@ -1,3 +1,4 @@
 * WINAIM-devops
 *.js WINAIM-devops
 /public/ WINAIM-devops
+app.css WINAIM-devops
