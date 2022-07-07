@@ -29,17 +29,15 @@ jobs:
         with: 
           name: code-coverage
           path: coverage 
-
       - name: build project
         if: github.event_name == 'push'
         run: npm run build 
-      - name: upload build
+      - name: upload build folder
         if: github.event_name == 'push'
         uses: actions/upload-artifact@v1
         with: 
           name: build
           path: build
-      - uses: actions/download-artifact    
       - name: deploy to staging  
         if: github.event_name == 'push' 
         run: npx surge --project ./build --domain perfect-magic.surge.sh
